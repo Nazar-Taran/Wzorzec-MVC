@@ -1,10 +1,17 @@
-﻿namespace Tests;
+using Xunit;
+using Microsoft.AspNetCore.Mvc;
+using Wzorzec_MVC.Controllers;
 
-public class UnitTest1
+namespace Tests
 {
-    [Fact]
-    public void Test1()
+    public class HomeControllerTests
     {
-
+        [Fact]
+        public void Index_Returns_ViewResult()
+        {
+            var controller = new HomeController();
+            var result = controller.Index();
+            Assert.IsType<ViewResult>(result);
+        }
     }
 }
